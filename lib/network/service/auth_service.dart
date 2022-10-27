@@ -7,8 +7,8 @@ class AuthService{
 
   Future<dynamic> signInWithEmail({required String email, required String password})async{
     var data = {
-      "phone_no" : "7012405595",
-      "password" : "Test@123"
+      "phone_no" : email,
+      "password" : password
     };
     Response response = await apiClient.post('/auth/login',data: data);
     return response.data;
